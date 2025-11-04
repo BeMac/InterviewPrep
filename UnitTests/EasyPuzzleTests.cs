@@ -23,5 +23,18 @@ public class EasyPuzzleTests
         
         Assert.Equal(happy, expected);
     }
+    
+    [Fact]
+    public void ProcessCouponStackOperations_Pass()
+    {
+        var operations = new List<string>();
+        operations.AddRange("push 2", "push 0", "push 3", "push 0", "getMin", "pop", "getMin", "pop", "top", "getMin");
+
+        var expected = new List<int>{0, 0, 0, 0};
+         
+        var happy = EasyPuzzles.ProcessCouponStackOperations(operations);
+        
+        Assert.Equal(happy, expected);
+    }
 
 }

@@ -49,5 +49,48 @@ public class EasyPuzzles
         return -1;
 
     }
+    
+    //implements 4 actions. Push, Pop, Top, GetMin.
+    //push requires an int value and pushes it to the end of the a temp stack.
+    //pop removes the top element from the temp stack
+    //Top adds the "top" value from the temp stack to the return object.
+    //getMin adds the minimum value from the temp stack to the return object. 
+    public static List<int> ProcessCouponStackOperations(List<string> operations)
+    {
+        List<int> returnList = new List<int>();
+        List<int> tempStack = new List<int>();
+        foreach (var operation in operations)
+        {
+            string[] verb = operation.Split(' ', 2);
+            switch (verb[0])
+            {
+                case "push":
+                    int happy = int.Parse(verb[1]);
+                    tempStack.Add(happy);
+                    break;
+                case "pop":
+                    if (tempStack.Count > 0)
+                    {
+                        tempStack.RemoveAt(tempStack.Count - 1);    
+                    }
+                    break;
+                case "top":
+                    if (tempStack.Count > 0)
+                    {
+                        returnList.Add(tempStack.Last());    
+                    }
+                    break;
+                case "getMin":
+                    if (tempStack.Count > 0)
+                    {
+                        returnList.Add(tempStack.Min());    
+                    }
+                    break;
+            }
+            
+        }
+
+        return returnList;
+    }
 }
 
