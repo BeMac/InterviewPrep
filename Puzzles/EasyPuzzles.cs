@@ -50,11 +50,12 @@ public class EasyPuzzles
 
     }
     
-    //implements 4 actions. Push, Pop, Top, GetMin.
-    //push requires an int value and pushes it to the end of the a temp stack.
+    //implements 4 actions from a list of string commands that can be passed in. Push, Pop, Top, GetMin.
+    //push requires an int value and pushes it to the end of the temp stack.
     //pop removes the top element from the temp stack
-    //Top adds the "top" value from the temp stack to the return object.
+    //Top adds the last value from the temp stack to the return object.
     //getMin adds the minimum value from the temp stack to the return object. 
+    //pop, top, and getmin, all require a non-empty stack.
     public static List<int> ProcessCouponStackOperations(List<string> operations)
     {
         List<int> returnList = new List<int>();
