@@ -3,7 +3,7 @@ public class MediumPuzzles
 {
     
     //Method returns the longest common prefix for all the strings that are passed into it. 
-    //if there is no common prefix it simply returns an empty string. 
+    //if there is no common prefix, it simply returns an empty string. 
     
     public static string LongestCommonPrefix(string[] strs)
     {
