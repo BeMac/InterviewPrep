@@ -36,5 +36,14 @@ public class EasyPuzzleTests
         
         Assert.Equal(happy, expected);
     }
-
+    
+    [Fact]
+    public void CountResponseTimeRegressions()
+    {
+        var responseTimes = new List<int> { 100, 200, 150,300 };
+        var expected = 2;
+        var happy = EasyPuzzles.CountResponseTimeRegressions(responseTimes);
+        
+        Assert.Equal(happy, expected);
+    }
 }

@@ -93,5 +93,31 @@ public class EasyPuzzles
 
         return returnList;
     }
+    
+    //Given an array of positive integers, return the number of elements that are strictly greater than the average of all previous elements. Skip the first element.
+    //[100, 200, 150,300]
+    public static int CountResponseTimeRegressions(List<int> responseTimes)
+    {
+        int average = responseTimes[0];
+        int sum = responseTimes[0];
+        int returnValue = 0;
+        for(int index = 1; index < responseTimes.Count; index ++)
+        {
+            if (responseTimes[index] < 0)
+            {
+                break;
+            }
+
+            if (responseTimes[index] > average)
+            {
+                returnValue++;
+            }
+            
+            sum += responseTimes[index];
+            average = sum / (index + 1);
+        }
+
+        return returnValue;
+    }
 }
 
