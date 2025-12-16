@@ -46,4 +46,15 @@ public class EasyPuzzleTests
         
         Assert.Equal(happy, expected);
     }
+    
+    [Fact]
+    public void CompareTriplets()
+    {
+        List<int> listA = [1, 2, 3];
+        List<int> listB = [3,2,1];
+        var happy = EasyPuzzles.CompareTriplets(listA, listB);
+        
+        List<int> expected = [1,1];
+        Assert.Equal(happy, expected);
+    }
 }

@@ -119,5 +119,29 @@ public class EasyPuzzles
 
         return returnValue;
     }
+    
+    public static List<int> CompareTriplets(List<int> aliceList, List<int> bobList)
+    {
+        List<int> returnValue = new List<int>();
+        int alicePoints = 0;
+        int bobPoints = 0;
+        for (int index = 0; index < aliceList.Count; index ++)
+        {
+            if(aliceList[index] > bobList[index])
+            {
+                alicePoints++;
+            }
+            else if (aliceList[index] < bobList[index])
+            {
+                bobPoints++;
+            }
+        }
+
+        returnValue.Add(alicePoints);
+        returnValue.Add(bobPoints);
+        return returnValue;
+    }
+
+
 }
 
